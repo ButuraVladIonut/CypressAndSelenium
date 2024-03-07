@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-03-06T09:44:04.320Z",
+    "end": "2024-03-06T09:47:13.260Z",
+    "duration": 188940,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e61a5d39-3495-41d6-a979-1d8547c6614f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CollectionModule\\CollectionTests.spec.js",
+      "file": "cypress\\e2e\\CollectionModule\\CollectionTests.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7eeae1f7-a097-4aad-a30a-d2a25993c16a",
+          "title": "Collection test case suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "creates a collection of products and add products to it",
+              "fullTitle": "Collection test case suite creates a collection of products and add products to it",
+              "timedOut": null,
+              "duration": 83622,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//cy.once('uncaught:exception', () => false); //turn of, but no result\ncy.contains('Collections').click();\ncy.get('table tbody').find('tr td').then(testData => {\n  cy.wrap(testData).eq(2).find('a').click();\n});\ncy.get('.text-interactive').should('be.visible').then(link => {\n  cy.get(link).click();\n});\n// cy.get('.text-interactive').click();\ncy.contains('Select Products').parents();",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading 'collection')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot read properties of undefined (reading 'collection')\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at D (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1156635)\n    at Ls (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1242550)\n    at va (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1252145)\n    at vc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1291332)\n    at sc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282516)\n    at ic (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282444)\n    at rc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282297)\n    at Yl (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1279103)\n    at <unknown> (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1228204)\n    at t.unstable_runWithPriority (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1335165)",
+                "diff": null
+              },
+              "uuid": "cba7347a-f573-44d5-ac2d-17816bc513a6",
+              "parentUUID": "7eeae1f7-a097-4aad-a30a-d2a25993c16a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cba7347a-f573-44d5-ac2d-17816bc513a6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 83622,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

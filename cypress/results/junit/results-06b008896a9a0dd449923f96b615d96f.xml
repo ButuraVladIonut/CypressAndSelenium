@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="24.932" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-03-07T09:22:49" tests="0" file="cypress\e2e\ProductModule\selectProductDbTest.spec.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="database tests - data integrity" timestamp="2024-03-07T09:22:49" tests="2" time="24.659" failures="0">
+    <testcase name="database tests - data integrity tries to see if the newly created product is in the db" time="19.168" classname="tries to see if the newly created product is in the db">
+    </testcase>
+    <testcase name="database tests - data integrity deletes a product and verifies if it has been deleted from the database" time="5.059" classname="deletes a product and verifies if it has been deleted from the database">
+    </testcase>
+  </testsuite>
+</testsuites>

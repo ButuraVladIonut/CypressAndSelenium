@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<testsuites>
+<testsuite name="Root Suite" timestamp="2024-03-06T09:58:15" tests="0" file="cypress\e2e\CouponModule\CouponApiTests.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Coupon API Test Case Suite" timestamp="2024-03-06T09:58:15" tests="1" time="20.235" failures="0">
+  
+  <testcase name="Coupon API Test Case Suite verifies the api call to changing coupon details" time="19.669" classname="verifies the api call to changing coupon details"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-03-07T09:22:49" tests="0" file="cypress\e2e\ProductModule\selectProductDbTest.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="database tests - data integrity" timestamp="2024-03-07T09:22:49" tests="2" time="24.659" failures="0">
+  
+  <testcase name="database tests - data integrity tries to see if the newly created product is in the db" time="19.168" classname="tries to see if the newly created product is in the db"></testcase>
+  
+  <testcase name="database tests - data integrity deletes a product and verifies if it has been deleted from the database" time="5.059" classname="deletes a product and verifies if it has been deleted from the database"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-03-07T08:20:38" tests="0" file="cypress\e2e\ProductModule\ProductTests.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Product Module Test Case Suite" timestamp="2024-03-07T08:20:38" tests="14" time="132.950" failures="2">
+  
+  <testcase name="Product Module Test Case Suite tries to make a product with empty required fields" time="8.177" classname="tries to make a product with empty required fields"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to make a product with empty name" time="7.182" classname="tries to make a product with empty name"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to create a product with all valid fields" time="7.288" classname="tries to create a product with all valid fields"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to create and delete a product" time="12.454" classname="tries to create and delete a product"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to create product with invalid price input" time="7.067" classname="tries to create product with invalid price input"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to create product with fake url key" time="7.379" classname="tries to create product with fake url key"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to create the same product twice" time="19.858" classname="tries to create the same product twice"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to select, change and unassign a category" time="6.857" classname="tries to select, change and unassign a category"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to select a tax class" time="3.883" classname="tries to select a tax class"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to save, add, delete pictures to product description; create folders; exit folder page" time="0.000" classname="tries to save, add, delete pictures to product description; create folders; exit folder page">
+    
+    <failure message="Timed out retrying after 4000ms: Expected to find element: `1`, but never found it. Queried from:
+
+              &gt; &lt;li.text-interactive.fill-current.flex.list-group-item&gt;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `1`, but never found it. Queried from:
+
+              > <li.text-interactive.fill-current.flex.list-group-item>
+    at Context.eval (webpack://evershop/./cypress/e2e/ProductModule/ProductTests.spec.js:166:24)]]></failure>
+    
+  </testcase>
+  
+  <testcase name="Product Module Test Case Suite tries the description features - bold, italic, link, bulleted list, numbered list, block quote, table" time="0.000" classname="tries the description features - bold, italic, link, bulleted list, numbered list, block quote, table">
+    
+    <failure message="The following error originated from your application code, not from Cypress.
+
+  &gt; Cannot read properties of null (reading &apos;root&apos;)
+Read more: https://ckeditor.com/docs/ckeditor5/latest/support/error-codes.html#error-Cannot read properties of null (reading &apos;root&apos;)
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application" type="CKEditorError"><![CDATA[CKEditorError: The following error originated from your application code, not from Cypress.
+
+  > Cannot read properties of null (reading 'root')
+Read more: https://ckeditor.com/docs/ckeditor5/latest/support/error-codes.html#error-Cannot read properties of null (reading 'root')
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+TypeError: Cannot read properties of null (reading 'root')
+    at mf (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:646580)
+    at If.deleteContent (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:662249)
+    at If.<anonymous> (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:322528)
+    at If.fire (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:318894)
+    at <computed> [as deleteContent] (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:322580)
+    at Object.callback (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:738139)
+    at If._runPendingChanges (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:664562)
+    at If.enqueueChange (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:660603)
+    at bm.execute (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:738079)
+    at bm.<anonymous> (http://localhost:3000/assets/admin/productNew/client/b98cbd046109676bb559.js:2:322528)]]></failure>
+    
+  </testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to add pictures to product and delete them" time="9.809" classname="tries to add pictures to product and delete them"></testcase>
+  
+  <testcase name="Product Module Test Case Suite tries to adjust the product status and checks it in the Products list" time="19.906" classname="tries to adjust the product status and checks it in the Products list"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-03-07T09:40:44" tests="0" file="cypress\e2e\SettingsModule\SettingsTests.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Setting Module Test Suite" timestamp="2024-03-07T09:40:45" tests="1" time="0.176" failures="0"></testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-03-06T10:07:11" tests="0" file="cypress\e2e\CouponModule\CouponTests.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Coupon Module Test Case Suite" timestamp="2024-03-06T10:07:12" tests="2" time="44.533" failures="0">
+  
+  <testcase name="Coupon Module Test Case Suite tries to add start and end date to a coupon" time="24.528" classname="tries to add start and end date to a coupon"></testcase>
+  
+  <testcase name="Coupon Module Test Case Suite tries to toggle the status, check the free shipping and select a discount type" time="19.064" classname="tries to toggle the status, check the free shipping and select a discount type"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-03-06T10:15:29" tests="0" file="cypress\e2e\ProductModule\deleteProductDbTest.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="database tests - CRUD operations" timestamp="2024-03-06T10:15:29" tests="1" time="3.143" failures="0">
+  
+  <testcase name="database tests - CRUD operations tests only the tasks operations" time="2.718" classname="tests only the tasks operations"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-03-06T10:09:25" tests="0" file="cypress\e2e\DashboardModule\DashboardTests.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="check dashboard page" timestamp="2024-03-06T10:09:25" tests="2" time="52.141" failures="0">
+  
+  <testcase name="check dashboard page shows sale statistics - daily/weekly/monthly" time="25.942" classname="shows sale statistics - daily/weekly/monthly"></testcase>
+  
+  <testcase name="check dashboard page navigates to the Products section" time="24.197" classname="navigates to the Products section"></testcase>
+  
+</testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-03-06T09:27:08" tests="0" file="cypress\e2e\AttributeModule\AttributesApiTests.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Attribute API Test Case Suite" timestamp="2024-03-06T09:27:08" tests="1" time="0.148" failures="0"></testsuite>
+
+<testsuite name="Root Suite" timestamp="2024-03-06T09:44:04" tests="0" file="cypress\e2e\CollectionModule\CollectionTests.spec.js" time="0.000" failures="0"></testsuite>
+<testsuite name="Collection test case suite" timestamp="2024-03-06T09:44:04" tests="1" time="188.842" failures="1">
+  
+  <testcase name="Collection test case suite creates a collection of products and add products to it" time="72.909" classname="creates a collection of products and add products to it">
+    
+    <failure message="The following error originated from your application code, not from Cypress.
+
+  &gt; Cannot read properties of undefined (reading &apos;collection&apos;)
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application" type="TypeError"><![CDATA[TypeError: The following error originated from your application code, not from Cypress.
+
+  > Cannot read properties of undefined (reading 'collection')
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+    at D (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1156635)
+    at Ls (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1242550)
+    at va (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1252145)
+    at vc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1291332)
+    at sc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282516)
+    at ic (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282444)
+    at rc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282297)
+    at Yl (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1279103)
+    at <unknown> (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1228204)
+    at t.unstable_runWithPriority (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1335165)]]></failure>
+    
+  </testcase>
+  
+</testsuite>
+
+</testsuites>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="20.263" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-03-06T09:58:15" tests="0" file="cypress\e2e\CouponModule\CouponApiTests.spec.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Coupon API Test Case Suite" timestamp="2024-03-06T09:58:15" tests="1" time="20.235" failures="0">
+    <testcase name="Coupon API Test Case Suite verifies the api call to changing coupon details" time="19.669" classname="verifies the api call to changing coupon details">
+    </testcase>
+  </testsuite>
+</testsuites>

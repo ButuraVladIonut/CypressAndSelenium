@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="3.196" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-03-06T10:15:29" tests="0" file="cypress\e2e\ProductModule\deleteProductDbTest.spec.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="database tests - CRUD operations" timestamp="2024-03-06T10:15:29" tests="1" time="3.143" failures="0">
+    <testcase name="database tests - CRUD operations tests only the tasks operations" time="2.718" classname="tests only the tasks operations">
+    </testcase>
+  </testsuite>
+</testsuites>

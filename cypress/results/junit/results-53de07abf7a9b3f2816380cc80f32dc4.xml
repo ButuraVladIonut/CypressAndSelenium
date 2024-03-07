@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="44.636" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-03-06T10:07:11" tests="0" file="cypress\e2e\CouponModule\CouponTests.spec.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Coupon Module Test Case Suite" timestamp="2024-03-06T10:07:12" tests="2" time="44.533" failures="0">
+    <testcase name="Coupon Module Test Case Suite tries to add start and end date to a coupon" time="24.528" classname="tries to add start and end date to a coupon">
+    </testcase>
+    <testcase name="Coupon Module Test Case Suite tries to toggle the status, check the free shipping and select a discount type" time="19.064" classname="tries to toggle the status, check the free shipping and select a discount type">
+    </testcase>
+  </testsuite>
+</testsuites>

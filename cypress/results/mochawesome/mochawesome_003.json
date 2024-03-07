@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-06T09:58:15.852Z",
+    "end": "2024-03-06T09:58:36.115Z",
+    "duration": 20263,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "763223fd-a6f2-4e79-a8ed-ba690896a1c4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CouponModule\\CouponApiTests.spec.js",
+      "file": "cypress\\e2e\\CouponModule\\CouponApiTests.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "94ad6b1c-6895-4404-8949-57cffebe4c48",
+          "title": "Coupon API Test Case Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifies the api call to changing coupon details",
+              "fullTitle": "Coupon API Test Case Suite verifies the api call to changing coupon details",
+              "timedOut": null,
+              "duration": 19669,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('PATCH', 'http://localhost:3000/api/coupons/286ff959-c1ed-4489-937f-6953b97c5c90').as('patchCoupon');\ncy.contains('Coupons').click();\n// cy.get('table tbody').find('tr').then( row => {\n//     cy.wrap(row).eq(1).find('td').then( rowData => {\n//         cy.wrap(rowData).eq(1).find('a').click()\n//     })\n// })\nvar coupon = 'coupon1';\ncy.contains(coupon).click();\ncy.get('[name=\"coupon\"]').invoke('attr', 'value').should('contain', 'coupon1');\ncy.get('[name=\"coupon\"]').clear().type('coupon2');\ncy.contains('Save').click();\ncy.wait('@patchCoupon').then(xhr => {\n  console.log(xhr);\n  expect(xhr.response.statusCode).to.equal(200);\n  expect(xhr.request.body.discount_amount).to.equal('40');\n  expect(xhr.request.body.coupon).to.equal('coupon2');\n});",
+              "err": {},
+              "uuid": "c9fe271e-1356-44b5-bc6d-515d86898d59",
+              "parentUUID": "94ad6b1c-6895-4404-8949-57cffebe4c48",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c9fe271e-1356-44b5-bc6d-515d86898d59"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19669,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

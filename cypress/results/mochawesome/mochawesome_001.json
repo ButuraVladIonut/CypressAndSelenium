@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 2,
+    "failures": -1,
+    "start": "2024-03-06T09:30:40.514Z",
+    "end": "2024-03-06T09:31:04.568Z",
+    "duration": 24054,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 66.66666666666666,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9a22863b-4f6c-443a-9405-b0411fa2f67a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\CollectionModule\\CollectionApiTest.spec.js",
+      "file": "cypress\\e2e\\CollectionModule\\CollectionApiTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "75847bd5-64a9-4d14-938a-68dd3eb1495f",
+          "title": "Coupon API Test Case Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "wants to find the api with the graphql",
+              "fullTitle": "Coupon API Test Case Suite wants to find the api with the graphql",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.contains('Collections').click();\ncy.contains('New Collection').click();\ncy.get('[name=\"name\"]').type('newCollection');\ncy.get('[name=\"code\"]').type('codeNewCollection');\ncy.contains('Save').click();",
+              "err": {},
+              "uuid": "aedcf3de-24d0-4f7d-96d8-4f4c793cd446",
+              "parentUUID": "75847bd5-64a9-4d14-938a-68dd3eb1495f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "verifies creation of collection api request-response",
+              "fullTitle": "Coupon API Test Case Suite verifies creation of collection api request-response",
+              "timedOut": null,
+              "duration": 22659,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('POST', 'http://localhost:3000/api/collections').as('postCollections');\ncy.contains('Collection').click();\ncy.contains('New Collection').click();\ncy.get('[name=\"name\"]').type('collectionNE2');\ncy.get('[name=\"code\"]').type('colNEW2');\ncy.contains('Save').click();\ncy.wait('@postCollections').then(xhr => {\n  console.log(xhr);\n  expect(xhr.request.body.code).to.equal('colNEW2');\n  expect(xhr.response.body.data.code).to.equal('colNEW2');\n});",
+              "err": {},
+              "uuid": "d8d2486b-3d27-4c7f-b769-17f63a9e19b7",
+              "parentUUID": "75847bd5-64a9-4d14-938a-68dd3eb1495f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "gives requests to the api, rather than going through ui",
+              "fullTitle": "Coupon API Test Case Suite gives requests to the api, rather than going through ui",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "const userCredentials = {\n  \"email\": \"butura.vlad.ionut@gmail.com\",\n  \"password\": \"Vladd123$\"\n};\nconst bodyRequest = {\n  \"name\": \"collectionNE2\",\n  \"collection_id\": \"\",\n  \"code\": \"colNEW2\",\n  \"description\": \"\"\n};\ncy.request('POST', 'http://localhost:3000/admin/user/login', userCredentials).its('body').then(body => {\n  const cookie = body.data.sid;\n  let uuid;\n  cy.request({\n    url: 'http://localhost:3000/api/collections',\n    headers: {\n      'Cookie': cookie\n    },\n    method: 'POST',\n    body: bodyRequest\n  }).then(response => {\n    expect(response.status).to.equal(200);\n    uuid = response.body.data.uuid;\n  });\n  cy.contains('Collections').click();\n  cy.get('table tbody').find('tr').then(row => {\n    cy.wrap(row).eq(1).find('td').then(rowData => {\n      cy.wrap(rowData).eq(0).find('.checkbox-unchecked').click();\n    });\n    cy.wrap(row).eq(0).find('a').then(a => {\n      cy.wrap(a).eq(1).find('span').click();\n      cy.contains('Delete 1 collections').parent().parent().find('.critical').click();\n    });\n  });\n  cy.request({\n    url: 'http://localhost:3000/api/collections/' + uuid,\n    headers: {\n      'Cookie': cookie\n    },\n    method: 'DELETE'\n  }).its('body').then(body => {\n    console.log(body);\n  });\n});",
+              "err": {},
+              "uuid": "94f6de7e-9237-44b9-9eec-21cd8a4909c5",
+              "parentUUID": "75847bd5-64a9-4d14-938a-68dd3eb1495f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d8d2486b-3d27-4c7f-b769-17f63a9e19b7"
+          ],
+          "failures": [],
+          "pending": [
+            "aedcf3de-24d0-4f7d-96d8-4f4c793cd446",
+            "94f6de7e-9237-44b9-9eec-21cd8a4909c5"
+          ],
+          "skipped": [],
+          "duration": 22659,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

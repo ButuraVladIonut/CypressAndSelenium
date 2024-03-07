@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-07T09:22:49.725Z",
+    "end": "2024-03-07T09:23:14.657Z",
+    "duration": 24932,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "02fe7be6-135b-4be0-88ce-4c76cf420b9b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ProductModule\\selectProductDbTest.spec.js",
+      "file": "cypress\\e2e\\ProductModule\\selectProductDbTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5309b73b-63af-4ffb-aa7e-31a0a4dee169",
+          "title": "database tests - data integrity",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "tries to see if the newly created product is in the db",
+              "fullTitle": "database tests - data integrity tries to see if the newly created product is in the db",
+              "timedOut": null,
+              "duration": 19168,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var randName = function generateRandomName() {\n  const letters = \"abcdefghijklmnopqrstuvwxyz\";\n  let name = \"\";\n  for (let i = 0; i < 6; i++) {\n    name += letters[Math.floor(Math.random() * letters.length)];\n  }\n  return name;\n};\nvar productName = 'produs db';\nvar the_sku = 'sku_test_db';\nvar the_url_key = randName();\ncy.contains('New Product').click();\ncy.get('[placeholder=\"Name\"]').type(productName);\ncy.get('[placeholder=\"Name\"]').invoke('prop', 'defaultValue').then(text => {\n  expect(text).to.equal(productName);\n});\ncy.get('[placeholder=\"SKU\"]').type('sku_test_db');\ncy.get('[placeholder=\"SKU\"]').invoke('prop', 'defaultValue').then(text => {\n  expect(text).to.equal('sku_test_db');\n});\ncy.get('[placeholder=\"Price\"]').type('123');\ncy.get('[placeholder=\"Price\"]').invoke('prop', 'defaultValue').then(text => {\n  expect(text).to.equal('123');\n});\ncy.get('[placeholder=\"Weight\"]').type('5');\ncy.get('[placeholder=\"Weight\"]').invoke('prop', 'defaultValue').then(text => {\n  expect(text).to.equal('5');\n});\ncy.get('[placeholder=\"Quantity\"]').type('50');\ncy.get('[placeholder=\"Quantity\"]').invoke('prop', 'defaultValue').then(text => {\n  expect(text).to.equal('50');\n});\ncy.get('[name=\"url_key\"]').type(the_url_key);\ncy.get('[name=\"url_key\"]').invoke('prop', 'defaultValue').then(text => {\n  expect(text).to.equal(the_url_key);\n});\ncy.get('[name=\"group_id\"]').select('Default');\ncy.contains('Save').click();\ncy.get('.page-heading').find('.page-heading-title').as('edit');\ncy.get('@edit').should('contain', `Editing ${productName}`);\ncy.get('@edit').parent().parent().find('.breadcrum-icon').click();\ncy.contains(productName).as('product');\ncy.task(\"READFROMDB\", {\n  //get config from cypress.config.js\n  dbConfig: Cypress.config('DB'),\n  //SQL we want to perform\n  sql: 'select sku, price, weight from \"product\" order by product_id desc limit 1'\n}).then(result => {\n  console.log(result.rows);\n  console.log(result.rows[0].sku);\n  expect(result.rows[0].sku).to.equal('sku_test_db');\n  console.log(result.rows[0].price);\n  expect(result.rows[0].price).to.equal('123.0000');\n  console.log(result.rows[0].weight);\n  expect(result.rows[0].weight).to.equal('5.0000');\n});",
+              "err": {},
+              "uuid": "514ced50-187f-443e-b7cd-12baee940957",
+              "parentUUID": "5309b73b-63af-4ffb-aa7e-31a0a4dee169",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "deletes a product and verifies if it has been deleted from the database",
+              "fullTitle": "database tests - data integrity deletes a product and verifies if it has been deleted from the database",
+              "timedOut": null,
+              "duration": 5059,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Products').click();\nvar productName = 'produs db';\ncy.contains(productName).get('.checkbox-unchecked').eq(1).click();\ncy.contains('Delete').click();\ncy.get('[class=\"card shadow\"]').find('[class=\"button critical\"]').click();\ncy.task(\"READFROMDB\", {\n  //get config from cypress.config.js\n  dbConfig: Cypress.config('DB'),\n  //SQL we want to perform\n  sql: 'select sku, price, weight from \"product\" order by product_id desc limit 1'\n}).then(result => {\n  console.log(result.rows);\n  console.log(result.rows[0].sku);\n  expect(result.rows[0].sku).not.to.equal('sku_test_db');\n  console.log(result.rows[0].price);\n  expect(result.rows[0].price).not.to.equal('123.0000');\n  console.log(result.rows[0].weight);\n  expect(result.rows[0].weight).not.to.equal('5.0000');\n});",
+              "err": {},
+              "uuid": "877f8d8f-648f-402f-881c-5a69bec6654e",
+              "parentUUID": "5309b73b-63af-4ffb-aa7e-31a0a4dee169",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "514ced50-187f-443e-b7cd-12baee940957",
+            "877f8d8f-648f-402f-881c-5a69bec6654e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24227,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

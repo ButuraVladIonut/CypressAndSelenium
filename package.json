@@ -1,0 +1,43 @@
+{
+  "name": "evershop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "testLogin": "mocha --timeout 10000 selenium/buyerSide/LoginModule/LoginModule.js",
+    "testAll": "mocha selenium",
+    "delete:reports": "del /q /f /s cypress\\results\\* || echo.",
+    "prereport": "npm run delete:reports",
+    "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/mochawesome*.json\" > mochawesome.json && npx marge mochawesome.json",
+    "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
+    "cypress:run": "npm run prereport && npx cypress run",
+    "cypress:merge:reports": "npm run junit:merge && npm run mochawesome:merge",
+    "setup": "evershop install",
+    "build": "evershop build",
+    "start": "evershop start",
+    "start:debug": "evershop start --debug",
+    "dev": "evershop dev",
+    "user:create": "evershop user:create",
+    "user:changePassword": "evershop user:changePassword"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@evershop/evershop": "^1.0.0",
+    "pg": "^8.11.3",
+    "selenium-webdriver": "^4.18.1"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "cypress": "^13.6.4",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-multi-reporters": "^1.6.4",
+    "junit-merge": "^2.0.0",
+    "mocha": "^10.3.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

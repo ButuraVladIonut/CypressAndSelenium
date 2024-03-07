@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-06T10:15:29.422Z",
+    "end": "2024-03-06T10:15:32.618Z",
+    "duration": 3196,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ce38dad4-608e-4a73-af92-297ee831c2ce",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ProductModule\\deleteProductDbTest.spec.js",
+      "file": "cypress\\e2e\\ProductModule\\deleteProductDbTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eb372666-b101-44a2-9008-6cf9fd035a2d",
+          "title": "database tests - CRUD operations",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "tests only the tasks operations",
+              "fullTitle": "database tests - CRUD operations tests only the tasks operations",
+              "timedOut": null,
+              "duration": 2718,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//insert new row\ncy.task(\"READFROMDB\", {\n  //get config from cypress.config.js\n  dbConfig: Cypress.config('DB'),\n  //SQL we want to perform\n  sql: `insert into product (sku, price, weight) values ('sku-db', 500, 10);`\n});\n//verify its presence\ncy.task(\"READFROMDB\", {\n  //get config from cypress.config.js\n  dbConfig: Cypress.config('DB'),\n  //SQL we want to perform\n  sql: 'select sku, price, weight from \"product\" order by product_id desc limit 1'\n}).then(result => {\n  console.log(result.rows);\n  console.log(result.rows[0].sku);\n  expect(result.rows[0].sku).to.equal('sku-db');\n  console.log(result.rows[0].price);\n  expect(result.rows[0].price).to.equal('500.0000');\n  console.log(result.rows[0].weight);\n  expect(result.rows[0].weight).to.equal('10.0000');\n});\n//delete the row\ncy.task(\"READFROMDB\", {\n  //get config from cypress.config.js\n  dbConfig: Cypress.config('DB'),\n  //SQL we want to perform\n  sql: `delete from product where sku = 'sku-db';`\n});\n//verify the row was deleted\ncy.task(\"READFROMDB\", {\n  //get config from cypress.config.js\n  dbConfig: Cypress.config('DB'),\n  //SQL we want to perform\n  sql: 'select sku, price, weight from \"product\" order by product_id desc limit 1'\n}).then(result => {\n  console.log(result.rows);\n  console.log(result.rows[0].sku);\n  expect(result.rows[0].sku).not.to.equal('sku-db');\n  console.log(result.rows[0].price);\n  expect(result.rows[0].price).not.to.equal('500.0000');\n  console.log(result.rows[0].weight);\n  expect(result.rows[0].weight).not.to.equal('10.0000');\n});",
+              "err": {},
+              "uuid": "d74d84c7-9bc7-4ca0-8fac-3ac1c3cf094d",
+              "parentUUID": "eb372666-b101-44a2-9008-6cf9fd035a2d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d74d84c7-9bc7-4ca0-8fac-3ac1c3cf094d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2718,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

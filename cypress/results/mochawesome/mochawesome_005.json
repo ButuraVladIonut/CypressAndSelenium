@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-03-06T10:09:25.941Z",
+    "end": "2024-03-06T10:10:18.231Z",
+    "duration": 52290,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d372da79-4bb4-47fa-96b9-26e947014909",
+      "title": "",
+      "fullFile": "cypress\\e2e\\DashboardModule\\DashboardTests.spec.js",
+      "file": "cypress\\e2e\\DashboardModule\\DashboardTests.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cfd0d570-9399-4189-aa32-1a51c215474e",
+          "title": "check dashboard page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "shows sale statistics - daily/weekly/monthly",
+              "fullTitle": "check dashboard page shows sale statistics - daily/weekly/monthly",
+              "timedOut": null,
+              "duration": 25942,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Dashboard').click();\n/*\n  readStatistics.readStatisticsDailyWeeklyOrMonthly(45, 179,'Weekly');\n      readStatistics.readStatisticsDailyWeeklyOrMonthly(45, 179, 'Monthly');\n*/\ncy.get('.recharts-wrapper').find('.recharts-tooltip-wrapper').trigger('mouseover', 45, 179, {\n  force: true\n});\ncy.get('.recharts-tooltip-label').should('contain', 'Oct 31');\ncy.get('.recharts-tooltip-item').should('contain', 'count : 0');\n/* \n  bug#1 - ramane cu o iteratie in urma.\n  cy.contains('Weekly').click();\n      cy.get('.recharts-wrapper').find('.recharts-tooltip-wrapper').trigger('mouseover', 45, 179, {force: true});\n      cy.get('.recharts-tooltip-label').should('contain', 'Sep 30');\n  cy.get('.recharts-tooltip-item').should('contain', 'count : 0');\n*/",
+              "err": {},
+              "uuid": "9aee2a0f-3e35-4d1f-9d52-d0a03143e135",
+              "parentUUID": "cfd0d570-9399-4189-aa32-1a51c215474e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "navigates to the Products section",
+              "fullTitle": "check dashboard page navigates to the Products section",
+              "timedOut": null,
+              "duration": 24197,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Dashboard').click();\ncy.contains('All products').click();\ncy.get('.page-heading').should('contain', 'Products');",
+              "err": {},
+              "uuid": "6f8f8523-9e3c-4f55-9ad0-47161541e1d8",
+              "parentUUID": "cfd0d570-9399-4189-aa32-1a51c215474e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9aee2a0f-3e35-4d1f-9d52-d0a03143e135",
+            "6f8f8523-9e3c-4f55-9ad0-47161541e1d8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 50139,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

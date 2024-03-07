@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 1,
+    "failures": 0,
+    "start": "2024-03-06T09:27:08.271Z",
+    "end": "2024-03-06T09:27:08.477Z",
+    "duration": 206,
+    "testsRegistered": 1,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c4fb209-c55d-4ab6-9cd3-ca204f11ca18",
+      "title": "",
+      "fullFile": "cypress\\e2e\\AttributeModule\\AttributesApiTests.spec.js",
+      "file": "cypress\\e2e\\AttributeModule\\AttributesApiTests.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c019e877-6438-4c0e-9681-3cee0f533128",
+          "title": "Attribute API Test Case Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verifies mock/stub api request-response",
+              "fullTitle": "Attribute API Test Case Suite verifies mock/stub api request-response",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.intercept('POST', 'http://localhost:3000/api/admin/graphql', {\n  fixture: \"mockAttributes.json\"\n});\ncy.contains('Attributes').click();",
+              "err": {},
+              "uuid": "b8d47d57-3418-4e89-92bd-83f8b84a3c2e",
+              "parentUUID": "c019e877-6438-4c0e-9681-3cee0f533128",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "b8d47d57-3418-4e89-92bd-83f8b84a3c2e"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

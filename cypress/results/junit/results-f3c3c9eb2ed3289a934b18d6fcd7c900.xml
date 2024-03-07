@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="188.940" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2024-03-06T09:44:04" tests="0" file="cypress\e2e\CollectionModule\CollectionTests.spec.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Collection test case suite" timestamp="2024-03-06T09:44:04" tests="1" time="188.842" failures="1">
+    <testcase name="Collection test case suite creates a collection of products and add products to it" time="72.909" classname="creates a collection of products and add products to it">
+      <failure message="The following error originated from your application code, not from Cypress.
+
+  &gt; Cannot read properties of undefined (reading &apos;collection&apos;)
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application" type="TypeError"><![CDATA[TypeError: The following error originated from your application code, not from Cypress.
+
+  > Cannot read properties of undefined (reading 'collection')
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+    at D (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1156635)
+    at Ls (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1242550)
+    at va (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1252145)
+    at vc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1291332)
+    at sc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282516)
+    at ic (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282444)
+    at rc (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1282297)
+    at Yl (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1279103)
+    at <unknown> (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1228204)
+    at t.unstable_runWithPriority (http://localhost:3000/assets/admin/collectionEdit/client/b98cbd046109676bb559.js:2:1335165)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

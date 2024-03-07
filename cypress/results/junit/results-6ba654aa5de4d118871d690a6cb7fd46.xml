@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="23.763" tests="3" failures="0" skipped="2">
+  <testsuite name="Root Suite" timestamp="2024-03-07T11:13:45" tests="0" file="cypress\e2e\CollectionModule\CollectionApiTest.spec.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Coupon API Test Case Suite" timestamp="2024-03-07T11:13:45" tests="3" time="23.623" failures="0">
+    <testcase name="Coupon API Test Case Suite verifies creation of collection api request-response" time="22.685" classname="verifies creation of collection api request-response">
+    </testcase>
+  </testsuite>
+</testsuites>
